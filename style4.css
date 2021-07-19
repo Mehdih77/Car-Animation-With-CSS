@@ -1,0 +1,102 @@
+@charset "UTF-8";
+@import "../cssreset/cssreset.css";
+
+.main-bg{
+    background-image: url(../img/sky.jpg);
+width: 100%;
+height: 100vh;
+background-position: center;
+background-size: cover;
+position: relative;
+overflow-x: hidden;
+}
+body:not([class^="road"]){
+    direction: ltr;
+}
+.road{
+    background-image: url(../img/road.jpg);
+width: 900%;
+height: 250px;
+position: absolute;
+left: 0; right: 0; bottom: 0;
+display: block;
+background-repeat: repeat-x;
+z-index: 1;
+animation: road 5s linear infinite;
+overflow-x: hidden;
+}
+@keyframes road{
+    0%{transform: translate(0);}
+    100%{transform: translate(-3000px);}
+}
+.sakhteman{
+    background-image: url(../img/city.png);
+width: 900%;
+height: 250px;
+position: absolute;
+background-repeat: repeat-x;
+z-index: 1;
+display: block;
+left: 0; right: 0; bottom: 250px;
+animation: sakhteman 20s linear infinite ;
+}
+@keyframes sakhteman{
+    0%{transform: translate(0);}
+    100%{transform: translate(-1000px);}
+}
+.car img{
+    overflow-x: hidden;
+    width: 100%;
+    animation: shake 1s linear infinite;
+animation: goo 6s linear infinite;
+animation-direction: alternate-reverse;
+}
+
+@keyframes goo{
+    50%{transform: translateX(1350px);
+}
+}
+
+@keyframes shake{
+    0%{transform: translateY(-2px);}
+    50%{transform: translateY(1px);}
+    100%{transform: translateY(-2px);}
+}
+.car{
+    width: 400px;
+    position: absolute;
+    bottom: 13%;
+    z-index: 2;
+    left: 40%;
+    transform: translateX(-40%);
+}
+.wheels{
+    position: absolute;
+    z-index: 3;
+    width: 68px;
+    bottom: 15%;
+    left: 40%;
+    transform: translate(-40%);
+}
+.wheels img{
+    width: 100%;
+    animation-direction: alternate-reverse;
+   overflow-x: hidden;
+    animation: charkh 6s linear infinite;
+}
+.wheels-back{
+    position: absolute;
+ bottom: 1%;
+ left: -140%;
+ overflow-x: hidden;
+}
+.wheels-front{
+    position: absolute;
+    bottom: 1%;
+    left: 220%;
+    overflow-x: hidden;
+}
+@keyframes charkh{
+    50%{transform: translateX(1350px) rotate(360deg);
+    }
+}
